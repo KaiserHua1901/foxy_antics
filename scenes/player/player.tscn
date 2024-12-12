@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://2tk0pj8bcob"]
+[gd_scene load_steps=11 format=3 uid="uid://2tk0pj8bcob"]
 
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_j8opi"]
 [ext_resource type="Texture2D" uid="uid://dhm1p68brrm3q" path="res://assets/player/player.png" id="1_yyfdn"]
 
 [sub_resource type="Animation" id="Animation_bp4ns"]
@@ -119,6 +120,7 @@ _data = {
 
 [node name="Player" type="CharacterBody2D" groups=["moveables"]]
 collision_layer = 0
+script = ExtResource("1_j8opi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_yyfdn")
