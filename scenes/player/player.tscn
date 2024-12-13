@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://2tk0pj8bcob"]
+[gd_scene load_steps=13 format=3 uid="uid://2tk0pj8bcob"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_j8opi"]
 [ext_resource type="Texture2D" uid="uid://dhm1p68brrm3q" path="res://assets/player/player.png" id="1_yyfdn"]
 [ext_resource type="PackedScene" uid="uid://etd1tv16mwh4" path="res://scenes/Camera/player_cam.tscn" id="3_u4fkj"]
+[ext_resource type="LabelSettings" uid="uid://c57087kb6t0iv" path="res://assets/LG_white_48.tres" id="4_wu8nh"]
 
 [sub_resource type="Animation" id="Animation_bp4ns"]
 length = 0.001
@@ -140,3 +141,14 @@ scale = Vector2(0.5, 0.9)
 shape = SubResource("RectangleShape2D_xgdx6")
 
 [node name="PlayerCam" parent="." instance=ExtResource("3_u4fkj")]
+
+[node name="DebugLabel" type="Label" parent="."]
+offset_left = -13.0
+offset_top = -33.0
+offset_right = 42.0
+offset_bottom = 42.0
+scale = Vector2(0.125894, 0.125701)
+text = "asdasd
+asdasd
+asdasd"
+label_settings = ExtResource("4_wu8nh")
