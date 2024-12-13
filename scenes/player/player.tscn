@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://2tk0pj8bcob"]
+[gd_scene load_steps=12 format=3 uid="uid://2tk0pj8bcob"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_j8opi"]
 [ext_resource type="Texture2D" uid="uid://dhm1p68brrm3q" path="res://assets/player/player.png" id="1_yyfdn"]
+[ext_resource type="PackedScene" uid="uid://etd1tv16mwh4" path="res://scenes/Camera/player_cam.tscn" id="3_u4fkj"]
 
 [sub_resource type="Animation" id="Animation_bp4ns"]
 length = 0.001
@@ -137,3 +138,5 @@ autoplay = "idle"
 position = Vector2(0, 5)
 scale = Vector2(0.5, 0.9)
 shape = SubResource("RectangleShape2D_xgdx6")
+
+[node name="PlayerCam" parent="." instance=ExtResource("3_u4fkj")]

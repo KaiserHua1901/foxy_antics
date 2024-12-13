@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://etd1tv16mwh4"]
+
+[node name="PlayerCam" type="Camera2D"]
+zoom = Vector2(3, 3)
+limit_bottom = 20
