@@ -120,7 +120,7 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xgdx6"]
 
-[node name="Player" type="CharacterBody2D" groups=["moveables"]]
+[node name="Player" type="CharacterBody2D" groups=["Player", "moveables"]]
 collision_layer = 0
 script = ExtResource("1_j8opi")
 
@@ -141,6 +141,7 @@ scale = Vector2(0.5, 0.9)
 shape = SubResource("RectangleShape2D_xgdx6")
 
 [node name="PlayerCam" parent="." instance=ExtResource("3_u4fkj")]
+zoom = Vector2(0.5, 0.5)
 
 [node name="DebugLabel" type="Label" parent="."]
 offset_left = -13.0
