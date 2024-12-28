@@ -7,8 +7,9 @@ var _life_span:float = 5.0
 var _life_time:float = 0.0 
 
 func _process(delta):
-	position += _direction * delta * 100
+	position += _direction * delta 
 	check_expired(delta)
+	print(global_position, position)
 
 func check_expired(delta) -> void: #querefree bullet when timer off 
 	_life_time += delta 
@@ -16,9 +17,9 @@ func check_expired(delta) -> void: #querefree bullet when timer off
 		queue_free()
 # use for setting up all the value of the bullet when instantance on the scene. 
 # It will be define later or use later to check if or is player or enemy bullet. 
-func setup(postion:Vector2, direction: Vector2, speed:float, life_span:float) -> void: 
-	global_position = postion 
-	_direction += direction * speed 
+func setup(pos:Vector2, dir: Vector2, life_span:float, speed:float) -> void: 
+	global_position = pos 
+	_direction = dir.normalized() * speed 
 	_life_span = life_span 
 
 

@@ -6,13 +6,14 @@ enum PlayerState {IDLE, RUN, JUMP, FALL, HURT}
 
 
 const GRAVITY:float = 690.0 
-const RUN_SPEED:float = 120.0 
+const RUN_SPEED:float = 200.0 
 const MAX_FALL:float = 600.0 
-const JUMP_VELOCITY:float = -560.0 
+const JUMP_VELOCITY:float = -300.0 
 
 @onready var sprite:Sprite2D = $Sprite2D
 @onready var debug_label:Label = $DebugLabel
 @onready var animation:AnimationPlayer = $AniPlayer 
+@onready var shooter: Shooter = $Shooter
 
 var _state:PlayerState = PlayerState.IDLE
 
@@ -23,6 +24,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	caculate_state()
 	updated_debug_label()
+	shooting()
 	# print(velocity.y)
 
 func get_input() -> void:
@@ -42,6 +44,14 @@ func get_input() -> void:
 	if Input.is_action_just_pressed("jump") == true and is_on_floor() == true:
 		velocity.y = JUMP_VELOCITY
 	velocity.y = clampf(velocity.y, JUMP_VELOCITY, MAX_FALL)
+
+func shooting():
+	if Input.is_action_just_pressed("bullet"):
+		if sprite.flip_h == true:
+			shooter.shoot(Vector2.LEFT)
+		elif sprite.flip_h == false:
+			shooter.shoot(Vector2.RIGHT)
+
 
 func updated_debug_label() -> void:
 	debug_label.text = "floor:%s\n velocity:x(%.0f), y(%.0f) \n state:%s" % [is_on_floor(), velocity.x, velocity.y, PlayerState.keys()[_state] ]
