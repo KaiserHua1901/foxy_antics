@@ -121,9 +121,10 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xgdx6"]
 
-[node name="Player" type="CharacterBody2D" groups=["Player", "moveables"]]
+[node name="Player" type="CharacterBody2D" groups=["moveables", "player"]]
 collision_layer = 0
 script = ExtResource("1_j8opi")
+metadata/_edit_horizontal_guides_ = [216.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_yyfdn")
@@ -156,4 +157,5 @@ asdasd"
 label_settings = ExtResource("4_wu8nh")
 
 [node name="Shooter" parent="." instance=ExtResource("5_8tbh8")]
-speed = 200.0
+speed = 600.0
+shoot_delay = 0.3
